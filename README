@@ -1,0 +1,77 @@
+🐳 Kubernetes Get Images Project
+
+Este projeto foi desenvolvido durante a Mentoria Desafios Fundamentais da Formação AWS (Henrylle Maia).
+Ele utiliza Kind (Kubernetes in Docker) para criar um cluster local e um script em Python que lista todos os pods e suas respectivas imagens dentro do Kubernetes.
+
+📌 Estrutura do Projeto
+.
+├── config.yaml                 # Configuração do cluster Kind
+├── kubernetes-get-images.py    # Script para listar pods e imagens
+├── nginx.yaml                  # Deployment de exemplo (nginx + alpine)
+├── requirements.txt            # Dependências Python
+└── README.md                   # Este arquivo :)
+
+⚙️ Pré-requisitos
+
+Docker
+
+Kind
+
+kubectl
+
+Python 3.8+
+
+PyCharm
+ (opcional, mas recomendado)
+
+🚀 Passo a Passo
+1️⃣ Criar cluster Kind
+kind create cluster --config config.yaml --name my-cluster
+
+2️⃣ Verificar cluster
+kubectl cluster-info --context kind-my-cluster
+
+3️⃣ Instalar dependências do Python
+pip install -r requirements.txt
+
+4️⃣ Aplicar o Deployment de exemplo
+kubectl apply -f nginx.yaml
+
+5️⃣ Rodar o script para listar Pods e Imagens
+python3 kubernetes-get-images.py
+
+
+👉 Para filtrar por namespace:
+
+python3 kubernetes-get-images.py --namespace default
+
+📊 Exemplo de Saída
++----------------------+-------------------------------+
+| Pods                 | Images                        |
++======================+===============================+
+| nginx-6c9f74c8d9-xyz | nginx, alpine                 |
++----------------------+-------------------------------+
+
+🛠 Tecnologias utilizadas
+
+Kind (Kubernetes in Docker)
+
+Kubernetes
+
+Python
+
+kubernetes-client
+
+colorama
+
+tabulate
+
+Docker
+
+✨ Próximos passos
+
+Adicionar outros manifests de exemplo.
+
+Exportar a saída do script para JSON/CSV.
+
+Criar testes automatizados para o script Python.
