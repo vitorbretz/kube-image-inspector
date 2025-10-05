@@ -1,6 +1,6 @@
 🐳 Kubernetes Get Images Project
 
-Este projeto foi desenvolvido durante a Mentoria Desafios Fundamentais da Formação AWS (Henrylle Maia).
+Este projeto foi desenvolvido durante o curso de python do Mateus Muller.
 Ele utiliza Kind (Kubernetes in Docker) para criar um cluster local e um script em Python que lista todos os pods e suas respectivas imagens dentro do Kubernetes.
 
 📌 Estrutura do Projeto
